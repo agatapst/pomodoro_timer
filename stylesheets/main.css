@@ -1,0 +1,32 @@
+body {
+    background: green; 
+}
+
+#container {
+    box-shadow: 0 0 3px rgba(0,0,0, 0.1);
+    width: 360px;
+    margin: 100px auto;
+    background: #f7f7f7;
+    height: 500px; 
+    position: relative;
+}
+
+h1, div {
+    text-align: center; 
+    width: 100%; 
+}
+
+#breaks {
+    text-align: center; 
+}
+
+#buttons {
+    position: absolute;
+    bottom: 50px;
+    margin: 0 auto;
+}
+
+span {
+    margin: 20px 30px; 
+    padding-top: 30px; 
+}
