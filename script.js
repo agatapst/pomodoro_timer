@@ -11,10 +11,13 @@ var workCycle = 0;
 var timeInterval;
 var display = document.querySelector("#timerText");
 var workCycleElement = document.querySelector("#cycles"); 
+var workAudio = document.getElementById("workAudio"); 
+var breakAudio = document.getElementById("breakAudio"); 
 
 const WORK_DURATION = 25 * 60;
 const SHORT_BREAK_DURATION = 5 * 60;
 const LONG_BREAK_DURATION = 15 * 60;
+
 
 btnStart.addEventListener("click", function() {
     // Timer was clicked before
@@ -32,6 +35,7 @@ btnStart.addEventListener("click", function() {
 // Start timer for the first time
 function startTimer(){
     var duration = WORK_DURATION;
+    playWorkAudio();
     timeInterval = setInterval(function() {
         console.log("timePaused:", timePaused);
         if(!timePaused){
@@ -51,8 +55,8 @@ function startTimer(){
                     console.log("short break");
                 }
             }    
-        }   
-    }, 1000);     
+        }  
+    }, 1000);    
 }
 
 // Display timer
@@ -73,6 +77,7 @@ btnPause.addEventListener("click", function(){
 
 // Break timer [short]
 function startBreak(){
+    playBreakAudio()
     var breakDuration = SHORT_BREAK_DURATION;
     timeInterval = setInterval(function() {
         if(!timePaused){
@@ -90,6 +95,7 @@ function startBreak(){
 
 // Break timer [long]
 function startBreakLong(){
+    playBreakAudio()
     var breakDurationLong = LONG_BREAK_DURATION;
     timeInterval = setInterval(function() {
         if(!timePaused){
@@ -111,5 +117,16 @@ btnReset.addEventListener("click", function(){
     clearInterval(timeInterval);
     startClicked = false; 
 });
+
+// Audio play
+function playWorkAudio() { 
+    workAudio.play(); 
+  } 
+  
+  function playBreakAudio() { 
+    breakAudio.play(); 
+  } 
+  
+ 
 
 
