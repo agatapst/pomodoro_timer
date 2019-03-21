@@ -30,6 +30,10 @@ h3 {
     font-size: 15px; 
 }
 
+.tomato-icon {
+    width: 25%; 
+}
+
 .buttons-section {
     width: 100%; 
     position: absolute;

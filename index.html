@@ -1,39 +1,38 @@
 <!DOCTYPE html>
 <html lang="en-EN">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Pomodoro">
-  <title>POMODORO</title>
-  <link rel="stylesheet" href="stylesheets/normalize.css">
-  <link rel="stylesheet" href="stylesheets/main.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Pomodoro">
+    <title>POMODORO</title>
+    <link rel="stylesheet" href="stylesheets/normalize.css">
+    <link rel="stylesheet" href="stylesheets/main.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.0/css/all.css" integrity="sha384-Mmxa0mLqhmOeaE8vgOSbKacftZcsNYDjQzuCOm6D02luYSzBG8vpaOykv9lFQ51Y" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700|Poppins" rel="stylesheet">
 </head>
 <body>
-
     <div id="container">
-            <h1>Pomodoro</h1>
-            <img src="images/tomato-icon.png">
-            <h3 class="tomatoes-number">So far, you have eaten <span id="cycles">0</span> tomatoes.</h3>
-            <div id="timerText">let's focus!</div>
-            
-        <div class="buttons">
-            <button class="button fas fa-play" id="start"></button>
-            <button class="button fas fa-pause" id="pause"></button>
+        <h1>Pomodoro</h1>
+        <img class="tomato-icon" src="images/tomato.svg">
+        <h3 class="tomatoes-number">So far, you have eaten <span id="cycles">0</span> tomatoes.</h3>
+        <div id="timerText">let's focus!</div>
+        
+        <div class="buttons-section">
+            <div class="button fas fa-play" id="start"></div>
+            <div class="button fas fa-pause" id="pause"></div>
         </div>
-       
+        
         <div class="button" id="reset">reset</div>
         
         <audio id="workAudio">
             <source src="sounds/squiggle.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
+                Your browser does not like fun and does not support the audio element.
         </audio>
-
+            
         <audio id="breakAudio">
             <source src="sounds/pinwheel.mp3" type="audio/mpeg">
-            Your browser does not support the audio element.
+                Your browser does not like fun and does not support the audio element.
         </audio>
-
+    </div>         
 <script src="script.js"></script>
 </body>
 </html>
