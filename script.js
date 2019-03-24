@@ -20,11 +20,11 @@ let workCycle = 0;
 let timeInterval;  
 
 // Start timer for the first time
-function startTimer(){
+function startTimer() {
     let duration = WORK_DURATION;
     workAudio.play();
     timeInterval = setInterval(function() {
-        if(!timePaused){
+        if(!timePaused) {
             duration--;
             display.textContent = "let's work for" + newline + timeView(duration) + newline + " minutes";
             if (duration <= 0) {
@@ -32,7 +32,7 @@ function startTimer(){
                 clearInterval(timeInterval);
                 workCycle++;
                 workCycleElement.textContent = workCycle; 
-                if (workCycle % 4 == 0){
+                if (workCycle % 4 == 0) {
                     startBreak(LONG_BREAK_DURATION);
                 } else {
                     startBreak(SHORT_BREAK_DURATION);
@@ -54,7 +54,7 @@ function timeView(time) {
 }
 
 // Break timer
-function startBreak(breakDuration){
+function startBreak(breakDuration) {
     breakAudio.play();
     timeInterval = setInterval(function() {
         if(!timePaused){
@@ -71,7 +71,7 @@ function startBreak(breakDuration){
 
 // Start timer
 btnStart.addEventListener("click", function() {
-    if (startClickedBefore){
+    if (startClickedBefore) {
         // Timer was clicked before
         timePaused = false;
     } else {
@@ -82,12 +82,12 @@ btnStart.addEventListener("click", function() {
 });
 
 // Pause timer
-btnPause.addEventListener("click", function(){
+btnPause.addEventListener("click", function() {
     timePaused = true;
 });
 
 // Reset
-btnReset.addEventListener("click", function(){
+btnReset.addEventListener("click", function() {
     display.textContent = "Okay, focus again!";
     clearInterval(timeInterval);
     timePaused = false;
