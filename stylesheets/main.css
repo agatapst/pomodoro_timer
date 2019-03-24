@@ -1,24 +1,23 @@
+*:focus {
+    box-shadow: none !important;
+    outline: none !important;
+}
+
 body {
     background: #0F2027;  /* fallback for old browsers */
     background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);  /* Chrome 10-25, Safari 5.1-6 */
     background: linear-gradient(to right, #2C5364, #203A43, #0F2027); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-
+    font-family: "Lato", sans-serif;
 }
 
 #container {
     width: 320px;
     margin: 120px auto;
-    height: 400px; 
-    position: relative;
     background: #f7f7f7;
     box-shadow: 0 0 3px rgba(0,0,0, 0.1);
     border-radius: 50px;
     padding: 30px; 
     text-align: center;
-}
-
-h1, h3 {
-    font-family: "Lato", sans-serif;
 }
 
 h1 {
@@ -31,37 +30,24 @@ h3 {
 }
 
 .tomato-icon {
-    width: 25%; 
-}
-
-.buttons-section {
-    width: 100%; 
-    position: absolute;
-    left: 0; 
-    bottom: 70px; 
-    display: inline-block;
-}
-
-.button {
-    border: none; 
-    background: transparent; 
-    margin: 5px;    
-}
-
-.button:hover {
-    cursor: pointer;
+    width: 64px; 
 }
 
 #timerText {
+    height: 150px;
     font-size: 30px; 
     white-space: pre-line;
     margin-top: 20px; 
     font-family: "Poppins", sans-serif;
 }
 
-#reset {
-    position: absolute;
-    left: 165px;
-    bottom: 30px;   
-    font-family: "Lato", sans-serif;
+.buttons-section {
+    width: 100%;
+}
+
+.button {
+    border: none;
+    background: transparent; 
+    margin: 5px; 
+    cursor: pointer;   
 }
