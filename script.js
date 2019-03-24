@@ -17,18 +17,7 @@ let startClickedBefore = false;
 let timePaused = false;
 let timeReset = false; 
 let workCycle = 0;
-let timeInterval; 
-
-btnStart.addEventListener("click", function() {
-    // Timer was clicked before
-    if (startClickedBefore){
-        timePaused = false;
-    // Timer was not clicked before
-    } else {
-        startClickedBefore = true;
-        startTimer();
-    }
-}); 
+let timeInterval;  
 
 // Start timer for the first time
 function startTimer(){
@@ -38,15 +27,15 @@ function startTimer(){
         if(!timePaused){
             duration--;
             display.textContent = "let's work for" + newline + timeView(duration) + newline + " minutes";
-            // break starts
             if (duration <= 0) {
+                // break starts
                 clearInterval(timeInterval);
                 workCycle++;
                 workCycleElement.textContent = workCycle; 
                 if (workCycle % 4 == 0){
-                    startBreakLong()
+                    startBreak(LONG_BREAK_DURATION);
                 } else {
-                    startBreak();
+                    startBreak(SHORT_BREAK_DURATION);
                 }
             }    
         }  
@@ -64,21 +53,15 @@ function timeView(time) {
     }
 }
 
-// Pause timer
-btnPause.addEventListener("click", function(){
-    timePaused = true;
-});
-
-// Break timer [short]
-function startBreak(){
+// Break timer
+function startBreak(breakDuration){
     breakAudio.play();
-    let breakDuration = SHORT_BREAK_DURATION;
     timeInterval = setInterval(function() {
         if(!timePaused){
             breakDuration--;
             display.textContent = "let's rest for" + newline + timeView(breakDuration) + newline + " minutes";
-            // the end of a break
             if (breakDuration <= 0) {
+                // the end of a break
                 clearInterval(timeInterval);
                 startTimer();
             } 
@@ -86,22 +69,22 @@ function startBreak(){
     }, 1000);
 }
 
-// Break timer [long]
-function startBreakLong(){
-    breakAudio.play();
-    let breakDurationLong = LONG_BREAK_DURATION;
-    timeInterval = setInterval(function() {
-        if(!timePaused){
-        breakDurationLong--;
-        display.textContent = "let's rest for" + newline + timeView(breakDurationLong) + newline + " minutes";
-        
-            if (breakDurationLong <= 0) {
-                clearInterval(timeInterval);
-                startTimer();
-            }
-        } 
-    }, 1000);
-}
+// Start timer
+btnStart.addEventListener("click", function() {
+    if (startClickedBefore){
+        // Timer was clicked before
+        timePaused = false;
+    } else {
+        // Timer was not clicked before
+        startClickedBefore = true;
+        startTimer();
+    }
+});
+
+// Pause timer
+btnPause.addEventListener("click", function(){
+    timePaused = true;
+});
 
 // Reset
 btnReset.addEventListener("click", function(){
